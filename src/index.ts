@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import express from "express";
 import { AppDataSource } from "./config/ormconfig";
+import userRoutes from "./routes/user";
 
 
 const app = express();
@@ -13,6 +14,7 @@ AppDataSource.initialize()
   .catch((error) => console.error("Database connection failed", error));
 
 
+app.use("/users", userRoutes);
 
 
 const PORT = process.env.PORT || 5000;
