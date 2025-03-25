@@ -6,6 +6,8 @@ import { User } from "../entities/User";
 const router = Router();
 const userRepository = AppDataSource.getRepository(User);
 
+
+
 // Create a new user
 router.post("/", async (req: Request, res: Response): Promise<any> => {
   try {
